@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Node.js dependencies
+      run: npm install
+      working-directory: ./node_modules/crypto-js
+
+    - name: Setup API secrets
+      run: echo "publicKey=${{ secrets.PUBLICKEY }}" >> ./secrets.js
+      run: echo "privateKey=${{ secrets.PRIVATEKEY }}" >> ./secrets.js
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Root directory or the directory containing your HTML files
