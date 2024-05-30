@@ -18,8 +18,9 @@ jobs:
       working-directory: ./node_modules/crypto-js
 
     - name: Setup API secrets
-      run: echo "publicKey=${{ secrets.PUBLICKEY }}" >> ./secrets.js
-      run: echo "privateKey=${{ secrets.PRIVATEKEY }}" >> ./secrets.js
+      run: |
+        echo "export const publicKey = ${{ secrets.PUBLICKEY }};" > ./secrets.js
+        echo "export const privateKey = ${{ secrets.PRIVATEKEY }};" >> ./secrets.js
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
