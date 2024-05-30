@@ -1,0 +1,82 @@
+@font-face {
+    font-family: marvel-font;
+    src: url(./fonts/marvel.otf);
+}
+
+:root {
+    --text: white;
+    --base: #e23636;
+    --text-hover: rgb(230, 230, 230);
+
+    --clr-grey: #504a4a;
+    --clr-overlay: rgba(69, 69, 69, 0.5);
+
+    font-family: marvel-font;
+    letter-spacing: 1px;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--base);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+/* header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid var(--text);
+}
+header a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--text);
+}
+header a:hover {
+    color: var(--text-hover);
+}
+
+/* main section */
+main {
+    margin-inline: 2rem;
+    margin-bottom: 3rem;
+}
+#heroInfoSection {
+    margin-block: 2rem;
+    margin-inline: auto;
+    display: flex;
+    gap: 1rem;
+}
+#heroInfoSection #heroDescription {
+    font-size: 1.5rem;
+}
+#heroName {
+    display: block;
+}
+.imgContainer {
+    width: 20rem;
+    height: 20rem;
+}
+.imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item {
+    margin-block: 0.2rem;
+    font-size: 1.5rem;
+}

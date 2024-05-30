@@ -1,0 +1,109 @@
+@font-face {
+    font-family: marvel-font;
+    src: url(./fonts/marvel.otf);
+}
+
+:root {
+    --text: white;
+    --base: #e23636;
+    --text-hover: rgb(230, 230, 230);
+
+    --clr-grey: #504a4a;
+    --clr-overlay: rgba(69, 69, 69, 0.5);
+
+    font-family: marvel-font;
+    letter-spacing: 1px;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--base);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid var(--text);
+}
+header a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--text);
+}
+header a:hover {
+    color: var(--text-hover);
+}
+
+/* main section */
+.searchBar {
+    padding-block: 11rem;
+    padding-inline: 2rem;
+    /* background-image: url('https://images.thedirect.com/media/photos/marvel-banner-2_9hkP9Pu.jpg'); */
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5eb48d3fef49df153d320521/1593108921611-2W3DNXP5QBMGATU3AGIY/Cover+Image');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#searchInp {
+    padding: 0.5rem;
+    width: 100%;
+    font-family: marvel-font;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    outline: transparent;
+    border: none;
+    border-radius: 7px;
+}
+
+/* result section */
+#resultContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin: 2rem;
+    align-items: baseline;
+}
+.card {
+    height: 100%;
+    width: 15rem;
+}
+.imgWrapper {
+    display: inline-block;
+    width: 15rem;
+    height: 12rem;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.imgWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.heroName {
+    font-size: 1.7rem;
+    margin-block: 1rem;
+}
+.favBtn {
+    font-family: sans-serif;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding-block: 0.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+    border: none;
+}
+.favBtn:hover {
+    background-image: linear-gradient(90deg, white, #ababab);
+}
+
+/* utility */
+.overlay {
+    border-image-source: linear-gradient(var(--clr-overlay), var(--clr-overlay));
+    border-image-slice: fill 1;
+}
