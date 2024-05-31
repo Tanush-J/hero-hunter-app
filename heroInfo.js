@@ -1,6 +1,3 @@
-import { publicKey, privateKey } from './secrets.js'
-const md5 = CryptoJS.MD5;
-
 const heroName = document.getElementById('heroName');
 const heroDescription = document.getElementById('heroDescription')
 const heroImg = document.getElementById('heroImg');
