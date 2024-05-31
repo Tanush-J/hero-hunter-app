@@ -12,17 +12,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
-    - name: Install Node.js dependencies
-      run: npm install
-
-    - name: Setup API secrets
-      run: |
-        echo "export const publicKey = ${{ secrets.PUBLICKEY }};" > ./secrets.js
-        echo "export const privateKey = ${{ secrets.PRIVATEKEY }};" >> ./secrets.js
-
-    - name: List files in root
-      run: ls -R . 
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
