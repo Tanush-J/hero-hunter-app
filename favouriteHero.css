@@ -52,7 +52,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: baseline;
 }
 .card {
@@ -63,6 +63,8 @@ main {
     display: inline-block;
     width: 15rem;
     height: 12rem;
+    border-radius: 7px;
+    overflow: hidden;
 }
 .card:hover {
     transform: scale(1.1);
@@ -84,7 +86,10 @@ main {
     font-size: 1.2rem;
     width: 100%;
     border: none;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: white;
 }
 .favBtn:hover {
-    background-image: linear-gradient(90deg, white, #ababab);
+    background-image: linear-gradient(90deg, #8d8d8d, white, #8d8d8d);
 }
