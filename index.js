@@ -14,6 +14,7 @@ const renderHeroList = (heroArray) => {
   resultDiv.innerHTML = '';
   if(!heroArray || heroArray.length === 0){
     const noHeroHeading = document.createElement('h2');
+    noHeroHeading.className = 'startHeading';
     noHeroHeading.textContent = 'No such hero found, please try something else'
     resultDiv.appendChild(noHeroHeading);
   } else {
@@ -86,7 +87,9 @@ const addToFavourite = (character) => {
   if (!favHeroStore.some(item => item.id === character.id)) {
     favHeroStore.push(character);
     localStorage.setItem('favHeroStore', JSON.stringify(favHeroStore));
-    alert('Hero added to favourites!')
+    alert('Hero added to favourites!');
+  } else {
+    alert('Hero already in favourites!');
   }
 }
 
@@ -97,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedState = JSON.parse(sessionStorage.getItem('heroPrevPageState'));
   if(!savedState){
     const startHeading = document.createElement('h2');
+    startHeading.className = 'startHeading';
     startHeading.textContent = 'Enter hero name in search bar to find hero!'
     resultDiv.appendChild(startHeading);
   } else {

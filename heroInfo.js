@@ -27,19 +27,21 @@ const heroDescriptionLoader = (description) => {
 
 const accordianEventLoader = (eventArr, id) => {
     const parentCont = document.getElementById(id)
+    const ul = document.createElement('ul');
     if(eventArr.length>0){
         eventArr.forEach(event => {
-            const itemEle = document.createElement('div')
+            const itemEle = document.createElement('li')
             itemEle.classList.add('item');
             itemEle.textContent = `${event.name}${event.type? ` - ${event.type}`: ''}`;
-            parentCont.appendChild(itemEle)
+            ul.appendChild(itemEle);
         });
     } else {
         const itemEle = document.createElement('div')
         itemEle.classList.add('item');
         itemEle.textContent = 'No data avaliable!'
-        parentCont.appendChild(itemEle)
+        ul.appendChild(itemEle)
     }
+    parentCont.appendChild(ul);
 }
 
 //event listener
