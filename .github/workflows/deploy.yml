@@ -21,8 +21,11 @@ jobs:
         echo "export const publicKey = ${{ secrets.PUBLICKEY }};" > ./secrets.js
         echo "export const privateKey = ${{ secrets.PRIVATEKEY }};" >> ./secrets.js
 
+    - name: List files in root
+      run: ls -R . 
+    
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./  # Root directory or the directory containing your HTML files
+        publish_dir: ./
